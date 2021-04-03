@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: teal;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.start-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6px !important;
+  font-weight: bold;
+  font-size: 12px;
+  min-width: 40px;
+}
+
+.start-button img {
+  margin-right: 4px;
+}
+
+.icon-button {
+  color: white;
+  display: flex;
+  width: 90px;
+  align-items: center;
+  flex-direction: column;
+  user-select: none;
+  text-align: center;
+}
+
+.icon-button p {
+  margin-top: 6px;
+}
+
+.icon-button p,
+.icon-button img {
+  pointer-events: none;
+}
+
+.window-body-white {
+  background: white;
+  margin: 1px;
+}
+
+.window-body-white > p {
+  margin: 10px;
+}
+
+button.active {
+  box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a,
+    inset -2px -2px #dfdfdf, inset 2px 2px grey;
+  padding: 2px 11px 0 13px;
+}
+
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement,
+::-webkit-scrollbar-button:horizontal:end:increment,
+::-webkit-scrollbar-button:horizontal:end:decrement {
+  display: none;
+}
+
+:root {
+  --button-highlight: #ffffff;
+  --button-face: #dfdfdf;
+  --button-shadow: #808080;
+  --window-frame: #0a0a0a;
+  --dialog-blue: #000080;
+
+  --border-field: inset -1px -1px var(--button-highlight),
+    inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
+    inset 2px 2px var(--window-frame);
+}
+
+.meter {
+  width: 155px;
+  height: 23px;
+  position: relative;
+  box-shadow: var(--border-field);
+  padding: 4px 4px 3px 4px;
+  border: none;
+  background-color: var(--button-highlight);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  background-color: var(--dialog-blue);
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(
+    90deg,
+    #000080 40%,
+    #ffffff 40%,
+    #ffffff 50%,
+    #000080 50%,
+    #000080 90%,
+    #ffffff 90%,
+    #ffffff 100%
+  );
+  background-size: 30px 30px;
+}
+
+.selection {
+  border-style: dotted;
+  border-color: #888;
+  border-width: 1px;
+  z-index: 100;
+  /* margin-left: -20px !important;
+  margin-top: -20px !important; */
+}
+
+.icon-item {
+  margin: 12px 0 0 0;
+}
+p.filename {
+  margin: 8px 0 0 0;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.icon-item.selected p.filename {
+  background-color: rgb(0, 21, 163);
+}
+
+.icon-item p.filename {
+  padding: 0 5px;
+}
+
+.icon-item.selected .tint {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0;
+}
+
+.icon-item.selected .tint:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 255, 255, 0.5);
+  transition: all 0.3s linear;
+  background-color: rgb(0, 21, 163, 0.5);
+}
+
+.window-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prompt-wrap {
+  z-index: 90;
+  position: absolute;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.start-menu-button p {
+  padding: 2px;
+}
+
+.start-menu-button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  flex: 1;
+}
+
+.start-menu-button:hover {
+  background-color: rgb(0, 21, 163);
+}
+.start-menu-button:hover > p {
+  color: white;
+}
+
+img.crisp {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+.title-bar {
+  height: 22px;
+}
+
+button {
+  background-color: silver !important;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey,
+    inset 2px 2px #dfdfdf;
+}
