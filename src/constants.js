@@ -87,8 +87,8 @@ export const DRIVE_PROPERTIES_MENU = {
 }
 
 export const ADD_PROGRAMS_MENU = {
-  type: 'add-programs',
-  title: 'Install Programs',
+  type: 'calculator',
+  title: 'Calculator',
 }
 export const UPGRADES = [
   {
@@ -182,7 +182,7 @@ export const DESKTOP_ICONS = [
   },
   {
     type: 'folder',
-    name: 'Install Programs',
+    name: 'Calculator',
     image: installPng,
     onDoubleClick: () => ADD_PROGRAMS_MENU,
   },
@@ -192,8 +192,7 @@ export const HELP_PROMPT = {
   type: 'prompt',
   image: errorPng,
   title: 'Windows has encountered an error',
-  label:
-    'Disk Cleanup Utility not found.  Please remove all files from this computer manually by clicking on them and pressing delete.',
+  label: 'Help not found.',
 }
 
 export const EXTENSION_IMAGES = {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { PathWindow } from '../components/PathWindow'
-import { AddProgramsMenu } from './AddProgramsMenu'
+import { Calculator } from './Calculator'
 import { Prompt, ProgressPrompt } from './Prompt'
 import { useWindowState } from '../utils/useWindowState'
 
@@ -22,8 +22,8 @@ export const Windows = () => {
     if (data.type === 'progress-prompt' || data.type === 'delete-prompt')
       return <ProgressPrompt key={`window-${data.index}`} {...props} />
 
-    if (data.type === 'add-programs')
-      return <AddProgramsMenu key={`window-${data.index}`} {...props} />
+    if (data.type === 'calculator')
+      return <Calculator key={`window-${data.index}`} {...props} />
 
     return null
   })
