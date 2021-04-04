@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/crypto-win/static/css/main.4853c7b4.chunk.css",
+    "main.css": "/crypto-win/static/css/main.c710e42a.chunk.css",
     "main.js": "/crypto-win/static/js/main.e941067e.chunk.js",
     "main.js.map": "/crypto-win/static/js/main.e941067e.chunk.js.map",
     "runtime-main.js": "/crypto-win/static/js/runtime-main.879d1045.js",
@@ -11,10 +11,10 @@
     "static/js/3.f84fedad.chunk.js": "/crypto-win/static/js/3.f84fedad.chunk.js",
     "static/js/3.f84fedad.chunk.js.map": "/crypto-win/static/js/3.f84fedad.chunk.js.map",
     "index.html": "/crypto-win/index.html",
-    "precache-manifest.34097a1f9ac55eb37a0a8f6bf5b88880.js": "/crypto-win/precache-manifest.34097a1f9ac55eb37a0a8f6bf5b88880.js",
+    "precache-manifest.503966e3352712efa5e65e42568f4809.js": "/crypto-win/precache-manifest.503966e3352712efa5e65e42568f4809.js",
     "service-worker.js": "/crypto-win/service-worker.js",
     "static/css/2.8a9348a0.chunk.css.map": "/crypto-win/static/css/2.8a9348a0.chunk.css.map",
-    "static/css/main.4853c7b4.chunk.css.map": "/crypto-win/static/css/main.4853c7b4.chunk.css.map",
+    "static/css/main.c710e42a.chunk.css.map": "/crypto-win/static/css/main.c710e42a.chunk.css.map",
     "static/js/2.903312a5.chunk.js.LICENSE.txt": "/crypto-win/static/js/2.903312a5.chunk.js.LICENSE.txt",
     "static/js/3.f84fedad.chunk.js.LICENSE.txt": "/crypto-win/static/js/3.f84fedad.chunk.js.LICENSE.txt",
     "static/media/chord.mp3": "/crypto-win/static/media/chord.19d21185.mp3",
@@ -26,7 +26,7 @@
     "static/js/runtime-main.879d1045.js",
     "static/css/2.8a9348a0.chunk.css",
     "static/js/2.903312a5.chunk.js",
-    "static/css/main.4853c7b4.chunk.css",
+    "static/css/main.c710e42a.chunk.css",
     "static/js/main.e941067e.chunk.js"
   ]
 }
