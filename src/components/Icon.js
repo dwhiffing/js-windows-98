@@ -1,6 +1,5 @@
 import React from 'react'
 import { useWindowState } from '../utils/useWindowState'
-import { PERMISSIONS_VIEW_ERROR } from '../constants'
 import useSound from 'use-sound'
 import boopSfx from '../assets/click.mp3'
 
@@ -29,10 +28,6 @@ export const Icon = ({
       onClick={onClick}
       disabled={disabled}
       onDoubleClick={() => {
-        if (item.path && disabled) {
-          windowActions.addWindow(PERMISSIONS_VIEW_ERROR)
-          return
-        }
         item.path &&
           windowActions.addWindow({
             type: 'path',

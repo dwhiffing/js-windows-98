@@ -3,6 +3,7 @@ import { PathWindow } from '../components/PathWindow'
 import { Calculator } from './Calculator'
 import { Prompt, ProgressPrompt } from './Prompt'
 import { useWindowState } from '../utils/useWindowState'
+import { Minesweeper } from './Minesweeper'
 
 export const Windows = () => {
   const [windows, actions] = useWindowState()
@@ -24,6 +25,9 @@ export const Windows = () => {
 
     if (data.type === 'calculator')
       return <Calculator key={`window-${data.index}`} {...props} />
+
+    if (data.type === 'minesweeper')
+      return <Minesweeper key={`window-${data.index}`} {...props} />
 
     return null
   })

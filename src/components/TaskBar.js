@@ -7,8 +7,7 @@ import arrowPng from '../assets/arrow.png'
 import installPng from '../assets/install.png'
 import programPng from '../assets/programs.png'
 import findPng from '../assets/find.png'
-import settingsPng from '../assets/settings.png'
-import { ADD_PROGRAMS_MENU, HELP_PROMPT } from '../constants'
+import { CALCULATOR, MINESWEEPER, HELP_PROMPT } from '../constants'
 import { useWindowState } from '../utils/useWindowState'
 import useSound from 'use-sound'
 import boopSfx from '../assets/click.mp3'
@@ -67,19 +66,24 @@ export const StartButton = () => {
     {
       text: 'Programs',
       image: programPng,
-      buttons: [],
-    },
-    {
-      text: 'Settings',
-      image: settingsPng,
       buttons: [
         {
-          text: 'Install programs',
+          text: 'Calculator',
           image: installPng,
-          onClick: () => actions.addWindow(ADD_PROGRAMS_MENU),
+          onClick: () => actions.addWindow(CALCULATOR),
+        },
+        {
+          text: 'Minesweeper',
+          image: installPng,
+          onClick: () => actions.addWindow(MINESWEEPER),
         },
       ],
     },
+    // {
+    //   text: 'Settings',
+    //   image: settingsPng,
+    //   buttons: [],
+    // },
     {
       text: 'Find',
       image: findPng,

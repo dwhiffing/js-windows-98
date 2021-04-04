@@ -222,3 +222,7 @@ button {
 .calc-buttons button.red {
   color: red;
 }
+
+.aspect-ratio-1 {
+  aspect-ratio: 1;
+}
