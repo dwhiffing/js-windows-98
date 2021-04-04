@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b56987bc65ac5eb31e02874a6f5a8535",
+    "revision": "714f2fa971a598546250a39ade8018b5",
     "url": "/crypto-win/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crypto-win/static/css/2.8a9348a0.chunk.css"
   },
   {
-    "revision": "99afb7515fb8379f8aec",
-    "url": "/crypto-win/static/css/main.ce65cedc.chunk.css"
+    "revision": "ab99dd9eee01508fd501",
+    "url": "/crypto-win/static/css/main.4853c7b4.chunk.css"
   },
   {
     "revision": "71bf71cdbc48ab450696",
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crypto-win/static/js/3.f84fedad.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "99afb7515fb8379f8aec",
-    "url": "/crypto-win/static/js/main.bf0bb9f8.chunk.js"
+    "revision": "ab99dd9eee01508fd501",
+    "url": "/crypto-win/static/js/main.e941067e.chunk.js"
   },
   {
     "revision": "f3f98922de4f1ef3734a",
