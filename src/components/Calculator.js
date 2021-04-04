@@ -10,6 +10,7 @@ export const Calculator = ({ onClose, windowData }) => {
   const [op, _setOp] = useState()
   const concatNumbers = (n) => (v) => Number(`${v}${n}`).toString()
   const [displayValue, setDisplayValue] = useState(0)
+
   const getClickValue = (n) => () => {
     if (op) {
       setValue2(concatNumbers(n))
@@ -159,9 +160,26 @@ export const Calculator = ({ onClose, windowData }) => {
 }
 
 const B = ({ onClick, label }) => (
-  <button onClick={onClick} className={RED.includes(label) ? 'red' : ''}>
+  <button
+    onClick={onClick}
+    className={RED.includes(label) ? 'red' : ''}
+    style={{ padding: 0 }}
+  >
     {label}
   </button>
 )
 
-const RED = ['Backspace', 'CE', 'C', 'MC', 'MS', 'M+', '+', '=', '-', '*', '/']
+const RED = [
+  'Backspace',
+  'CE',
+  'C',
+  'MC',
+  'MR',
+  'MS',
+  'M+',
+  '+',
+  '=',
+  '-',
+  '*',
+  '/',
+]

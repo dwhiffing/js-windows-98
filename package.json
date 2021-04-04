@@ -2,7 +2,7 @@
   "name": "crypto-win98",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dwhiffing.github.io/crypto-win98",
+  "homepage": "https://dwhiffing.github.io/crypto-win",
   "dependencies": {
     "98.css": "^0.1.16",
     "@simonwep/selection-js": "^1.7.0",
@@ -14,7 +14,6 @@
     "chokidar-cli": "^2.1.0",
     "faker": "^4.1.0",
     "fs-web": "^1.0.1",
-    "gh-pages": "^3.1.0",
     "js-base64": "^3.4.5",
     "js-image-generator": "^1.0.2",
     "lodash": "^4.17.19",
@@ -36,6 +35,7 @@
     "start": "npm-run-all build:tailwind --parallel watch:tailwind start:react",
     "start:react": "react-scripts start",
     "prebuild": "run-s build:tailwind",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -57,6 +57,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
+    "gh-pages": "^3.1.0",
     "postcss-cli": "^7.1.1"
   }
 }
