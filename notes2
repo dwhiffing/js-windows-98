@@ -1,0 +1,26 @@
+variables
+d: the displayed value
+v: the value in memory
+o: the operator in memory
+
+button types
+
+value
+012345679
+append the value to d
+
+operator
++-*/
+set v to d
+set d to ''
+set o to pressed op
+
+equals
+if o == null return
+apply v to d via o
+
+calculator: 
+  level 1: enter secret 3 digit code
+  level 2: magic square
+  level 3: enigma mode
+    you need to find the correct settings to decode messages via enigma mode

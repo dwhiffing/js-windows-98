@@ -1,73 +1,86 @@
 import React, { useState } from 'react'
 import Draggable from 'react-draggable'
 
+const width = 300
+const height = 300
+
 export const Calculator = ({ onClose, windowData }) => {
+  const [stored, setStored] = useState(0)
+  const [op, setOp] = useState()
+  const [edit, setEdit] = useState(true)
+  const [display, setDisplay] = useState(0)
   const nodeRef = React.useRef(null)
-  const width = 300
-  const height = 300
-  const [value, setValue] = useState(0)
-  const [value2, setValue2] = useState(0)
-  const [op, _setOp] = useState()
-  const concatNumbers = (n) => (v) => Number(`${v}${n}`).toString()
-  const [displayValue, setDisplayValue] = useState(0)
 
   const getClickValue = (n) => () => {
-    if (op) {
-      setValue2(concatNumbers(n))
-      setDisplayValue(concatNumbers(n))
-    } else {
-      setValue(concatNumbers(n))
-      setDisplayValue(concatNumbers(n))
-    }
+    setDisplay((v) => Number(`${edit ? v : ''}${n}`))
+    setEdit(true)
   }
 
-  const setOp = (op) => {
-    _setOp(op)
-    setDisplayValue('')
+  const getClickOp = (_op) => () => {
+    if (op) {
+      getResult()
+    } else {
+      setStored(display)
+      setDisplay(0)
+    }
+    setOp(_op)
   }
 
   const getResult = () => {
-    const applySum = (sum) => {
-      setDisplayValue(`${sum}`)
-      setValue(`${sum}`)
-      setValue2(0)
-      _setOp()
-    }
     if (op === '+') {
-      applySum(Number(value) + Number(value2))
+      setStored(Number(stored) + Number(display))
     }
     if (op === '-') {
-      applySum(Number(value) - Number(value2))
+      setStored(Number(stored) - Number(display))
     }
     if (op === '/') {
-      applySum(Number(value) / Number(value2))
+      setStored(Number(stored) / Number(display))
     }
     if (op === '*') {
-      applySum(Number(value) * Number(value2))
+      setStored(Number(stored) * Number(display))
     }
+    setEdit(false)
   }
 
+  const backspace = () => {
+    setDisplay((d) => d.toString().slice(0, -1))
+  }
+
+  console.log({ stored, display, op })
+
   const clear = () => {
-    setValue(0)
-    setValue2(0)
-    setDisplayValue('')
-    _setOp('')
+    setStored(0)
+    setDisplay(0)
+    setOp()
   }
 
   const sqrt = () => {
-    setValue((v) => Math.sqrt(v))
-    setValue2(0)
-    setDisplayValue((v) => Math.sqrt(Number(v)))
-    _setOp('')
+    setStored((v) => Math.sqrt(v))
+    setDisplay((v) => Math.sqrt(v))
+    setOp()
   }
 
   const percent = () => {
-    if (value && value2) {
-      const perc = (value2 / 100) * value
-      setValue2(perc)
-      setDisplayValue(perc)
+    if (stored && display) {
+      const perc = (display / 100) * stored
+      setDisplay(perc)
     }
   }
+
+  const negate = () => {
+    setDisplay((d) => d * -1)
+  }
+
+  const oneOverX = () => {}
+
+  const decimal = () => {
+    setDisplay((d) => {
+      console.log(d)
+      return Number(d + '.123')
+    })
+  }
+
+  const displayedValue = ((edit ? display : stored) || display || 0).toString()
 
   return (
     <Draggable
@@ -103,7 +116,7 @@ export const Calculator = ({ onClose, windowData }) => {
             <div className="field-row" style={{ margin: '7px 7px 12px 0' }}>
               <input
                 style={{ height: 28, textAlign: 'right' }}
-                value={displayValue}
+                value={displayedValue}
                 className="w-full"
                 id="text17"
                 type="text"
@@ -112,7 +125,7 @@ export const Calculator = ({ onClose, windowData }) => {
 
             <div className="calc-buttons">
               <button style={{ flex: 0.88 }} className="red"></button>
-              <B label="Backspace" onClick={clear} style={{ flex: 2 }} />
+              <B label="Backspace" onClick={backspace} style={{ flex: 2 }} />
               <B label="CE" onClick={clear} style={{ flex: 2 }} />
               <B label="C" onClick={clear} style={{ flex: 2 }} />
             </div>
@@ -122,7 +135,7 @@ export const Calculator = ({ onClose, windowData }) => {
               <B label="7" onClick={getClickValue(7)} />
               <B label="8" onClick={getClickValue(8)} />
               <B label="9" onClick={getClickValue(9)} />
-              <B label="/" onClick={() => setOp('/')} />
+              <B label="/" onClick={getClickOp('/')} />
               <B label="sqrt" onClick={sqrt} />
             </div>
 
@@ -131,7 +144,7 @@ export const Calculator = ({ onClose, windowData }) => {
               <B label="4" onClick={getClickValue(4)} />
               <B label="5" onClick={getClickValue(5)} />
               <B label="6" onClick={getClickValue(6)} />
-              <B label="*" onClick={() => setOp('*')} />
+              <B label="*" onClick={getClickOp('*')} />
               <B label="%" onClick={percent} />
             </div>
 
@@ -140,16 +153,16 @@ export const Calculator = ({ onClose, windowData }) => {
               <B label="1" onClick={getClickValue(1)} />
               <B label="2" onClick={getClickValue(2)} />
               <B label="3" onClick={getClickValue(3)} />
-              <B label="/" onClick={() => setOp('/')} />
-              <B label="1/x" onClick={clear} />
+              <B label="-" onClick={getClickOp('-')} />
+              <B label="1/x" onClick={oneOverX} />
             </div>
 
             <div className="calc-buttons">
               <B label="M+" onClick={clear} />
               <B label="0" onClick={getClickValue(0)} />
-              <B label="+/-" onClick={clear} />
-              <B label="." onClick={clear} />
-              <B label="+" onClick={() => setOp('+')} />
+              <B label="+/-" onClick={negate} />
+              <B label="." onClick={decimal} />
+              <B label="+" onClick={getClickOp('+')} />
               <B label="=" onClick={getResult} />
             </div>
           </div>
